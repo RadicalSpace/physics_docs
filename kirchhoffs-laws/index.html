@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Kirchhoff's Laws</title>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"
+    integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI+WdtXRGWt2kTvGFasHpSy3SV" crossorigin="anonymous">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"
+    integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG+vnGctmUb0ZY0l8"
+    crossorigin="anonymous"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"
+    integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05"
+    crossorigin="anonymous"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      renderMathInElement(document.body, {
+        // customised options
+        // • auto-render specific keys, e.g.:
+        delimiters: [
+          {left: '$$', right: '$$', display: true},
+          {left: '$', right: '$', display: false},
+          {left: '\\(', right: '\\)', display: false},
+          {left: '\\[', right: '\\]', display: true}
+        ],
+        // • rendering keys, e.g.:
+        throwOnError: false
+      });
+    });
+  </script>
+
+  <link href="../post.css" rel="stylesheet" type="text/css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <div class="gradient-left"></div>
+  <div class="gradient-right"></div>
+  <div class="home-banner">
+    <div id="progress"></div><b><a href="../index.html">＜ Home</a></b>
+  </div>
+  <div class="article-heading"><span class="article-title">Circuits and Kirchhoff's Laws</span><br><span
+      class="article-subtitle">The holy grail of circuits</span><br><span
+      class="article-author-and-date">Leandros Dimitropoulos • 11 April 2024</span></div>
+  <div class="article-text">
+    <h1>Introduction</h1>
+    <p class="begin">Circuits are without a doubt one of the hardest subjects to understand in all of introductory physics. Every worksheet can feel like an ocean of endless combined circuits that make no sense, voltage values that seem to deviate almost comically from your solution, and so much more. On a good day, circuits are insufferable. 
+      <br><br>However, with two seemingly enigmatic laws of circuits, and a little elbow grease, we can unlock whole entire worlds of possibilities.<br><br>Gustav Kirchoff, during his lifetime, came up with a plethora of laws, but the two that concern us the most today are his two laws of circuits, which state:<br><br>
+    <ol>
+      <li>The sum of the currents going into a junction equals the sum of the currents going out of the junction</li>
+      <li>The sum of all the voltages in a closed loop equals 0</li>
+    </ol><br><br>
+  These two laws, though unintuitive at first glance, are actually generalizations of concepts we already know about circuits</p>
+  <h1>Simple Concepts</h1>
+  <div>Think about what we already know about circuits, and their behaviors. <br><br>
+  <div class="article-image"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUKr4ev81NF3GZ2ceZS9cUDWjnt-n-BwyUie70otu4XA&s" width="60%"></img>
+    <p>A series circuit</p>
+  </div>
+  Consider a simple series circuit such as the one shown above.<br><br>
+  Using our knowledge about circuits, we know that, though the voltage of each resistor might be different, the current going through each resistor is the same. <br><br>
+  <div class="article-image"><img src="https://www.allaboutcircuits.com/uploads/thumbnails/Figure_1._Parallel_circuit_with_a_battery_and_three_resistors_.jpg" width="60%"></img>
+    <p>A parallel circuit</p>
+  </div><br><br>
+  On the other hands, for resistors in parallel such as the one shown above, the voltage of two resistors in parallel will always be the same, but the current going through them might be different. <br><br>
+  <div class="article-image"><img src="https://www.electronics-tutorials.ws/wp-content/uploads/2013/08/dcp8a.gif?fit=413%2C262" width="60%"></img>
+    <p>A loop in a circuit</p>
+  </div><br><br>
+  Using this to our knowledge, let's analyze the purple "loop" section of the circuit shown above.<br><br>
+  Since we know $R_5$, $R_6$, and $R_7$ are in series, we can view that entire section as a resistor equivalent to $R_5+R_6+R_7$, and subsequently, since the current is the same through each resistor, it's voltage is equal to $V_5+V_6+V_7$<br><br>
+  Since this equivalent resistor is parallel to $R_4$, the voltages across each segment must be the same, thus giving us $$V_4=V_5+V_6+V_7$$
+  Kirchhoff's junction rule works under this same principle:<br><br>
+  For any closed loop in a circuit (such as the purple "loop"), we can define a circular flow of current (even if that isn't necessarily what is happening, we can claim that any opposition to that circular flow is simply "negative current"). The sum of the voltage of any resistors in series with to the upward portion of the loop (in this case $V_4$) is equal to the sum of the voltage of any resistors in series with the downwards, or sideways portions of the loop (in this case $V_5+V_6+V_7$)
+  <br><br>
+  Kirchoff's junction rule is a bit tougher to prove conceptually, but its easy to grapple so I'm not really going to bother proving it. Basically, all you need to know for Kirchoff's junction rule is that for a junction such as the one shown below:
+  <div class="article-image"><img src="https://www.electronics-notes.com/images/kirchoffs-current-law-summary-01.png" width="60%"></img>
+    <p>A junction!</p>
+  </div><br><br>
+  The sum of the currents going into the junction (that being $I_1$,$I_5$,$I_4$ here) equals the sum of the currents going out of the junction (that being $I_2$ and $I_3$ here). <br><br>
+  So in this scenario... $$I_1+I_4+I_5=I_2+I_3$$<br>
+  <h1>Solving Advanced Circuits</h1>
+  <br><div class="article-image"><img src="https://mathonweb.com/help/mat38.gif" width="60%"></img>
+    <p>A pretty complex circuit...</p>
+  </div><br><br>
+  Consider the following circuit shown above. Let's begin by analyzing the loops around this circuit
+  <br><div class="article-image"><img src="https://mathonweb.com/help/mat42.gif" width="60%"></img>
+    <p>A pretty complex circuit... but with loops!</p>
+  </div><br><br>
+  Notice how the current going through the $25\Omega$ resistor is being affected by both $I_1$ and $I_2$? Instead of focusing on the resistor's own current, we can simply define it as being $I_1-I_2$ (since $I_2$ is acting against the flow of $I_1$). <br><br>
+  Likewise, we can view the current going through the $1\Omega$ resistor on the right side as equal to $I_2-I_3$ and the $50\Omega$ resistor's current as $I_1-I_3$ <br><br>
+  Now let's utilize the loop rule to create some formulas. Since the upwards portions of the loops are equal to the downwards portions, we can create a system of equations, which state:
+  $$10=V_{1\Omega,left}+V_{25\Omega}+V_{50\Omega}$$
+  $$V_{25\Omega}=V_{30\Omega}+V_{1\Omega,right}$$
+  $$V_{50\Omega}=V_{1\Omega,right}+V_{55\Omega}$$
+  We can use Ohm's law ($V=IR$) to further simplify this:
+  $$I_1+25(I_1-I_2)+50(1_1-I_3)=10$$
+  $$25(I_1-I_2)+30I_2+I_2-I_3=0$$
+  $$50(1_1-I_3)+I_2-I_3+55I_3=0$$
+  Once we simplify this down, we get:
+  $$76I_1-25I_2-50I_3=10$$
+  $$-25I_1+56I_2-I_3=0$$
+  $$-50I_1-I_2+106I_3=0$$
+  Now, you can solve this like any other ordinary system of linear equations, or, you can do it the fun way, with matrices!
+  <br><br>
+  Once you finish simplifying, you should get the following current values:
+  <br><div class="article-image"><img src="https://mathonweb.com/help/mat50.gif" width="60%"></img>
+    <p>Answers!</p>
+  </div><br><br>
+  If you are curious about Kirchoff's laws, check out <a href="https://mathonweb.com/help/electrical.htm" target="_blank">this</a> link, which also contains the values for the problem listed above.
+  </div>
+  </div>
+  <div class="footer"></div>
+  <script src='../post.js'></script>
+</body>
+
+</html>

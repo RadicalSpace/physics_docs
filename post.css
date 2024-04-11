@@ -1,0 +1,184 @@
+body{
+    margin: 0;
+    font-family: Helvetica;
+  }
+  
+  .gradient-left{
+    position: fixed;
+    height: 100%;
+    width: 5%;
+    background: linear-gradient(0.25turn,rgba(220,220,220,0.25),rgba(0,0,0,0));
+  }
+  
+  .gradient-right{
+    position: fixed;
+    height: 100%;
+    left: 95%;
+    width: 5%;
+    background: linear-gradient(0.75turn,rgba(220,220,220,0.25),rgba(0,0,0,0));
+  }
+  
+  .home-banner{
+    z-index:1;
+    top: 0;
+    position:sticky;
+    position:-webkit-sticky;
+    font-size: 30px;
+    padding: 20px;
+    border-bottom: 1px solid grey;
+    background-color: #fafafa;
+    box-shadow: 0px 12.5px 7.5px rgba(0,0,0,0.05);
+  }
+  
+  #progress{
+    background-color: #00aaff;
+    position: absolute;
+    width: 100%;
+    height: 5%;
+    top:96%;
+    left:0;
+  }
+  
+  .home-banner a{
+    color:#1e1e1e;
+    text-decoration: none;
+  }
+  .home-banner a:visited{
+    color:#1e1e1e;
+  }
+  .home-banner a:hover{
+    text-decoration: underline;
+  }
+  
+  .article-text{
+    line-height: 2em;
+    display: inline-block;
+    position:relative;
+    margin:20%;
+    margin-top: 0;
+    top:100px;
+    font-size: 14pt;
+    text-align: justify;
+    font-family: 'Libre Caslon Text', serif;
+    font-weight:400;
+  }
+  .begin::first-letter{
+    initial-letter: 2;
+    margin-right: 7px;
+  }
+  
+  .article-heading{
+    font-family: 'Libre Caslon Text', serif;
+    position: relative;
+    width: 80%;
+    left: 10%;
+    text-align: center;
+    top:50px;
+  }
+  
+  .article-title{
+    line-height:1.5em;
+    font-size: 60pt;
+    font-weight: 700;
+  }
+  
+  .article-subtitle{
+    font-size: 20pt;
+    color:#222222;
+    font-style: italic;
+  }
+  
+  .article-image{
+    margin-top:20px;
+    margin-bottom:20px;
+    line-height:0em;
+    position: relative;
+    width:100%;
+    font-size:12pt;
+  }
+  
+  .quiz{
+    background-color: #eee;
+    padding-top: 10px;
+    border: 1px ridge gray;
+    border-radius: 8px;
+    width:80%;
+    margin-top:20px;
+    margin-left:auto;
+    margin-right:auto;
+  }
+  
+  .article-image p{
+    text-align: center;
+    color:gray;
+    margin-top: 5%;
+    margin-bottom: 5%;
+  }
+  
+  .article-image img{
+    display:block;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    text-align:center;
+  }
+  
+  .article-image .credits{
+    text-align: center;
+    margin:10%;
+    color:gray
+  }
+  
+  .article-author-and-date{
+    line-height: 2em;
+    font-family: Helvetica;
+    font-weight: 100;
+  }
+  
+  .submit{
+    border:none;
+    padding:10px;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 14pt;
+    background-color:#fff;
+    margin:10px;
+  }
+  
+  .submit:hover{
+    background-color:#fafafa
+  }
+  
+  .quiz-field{
+    border:none;
+  }
+  
+  input{
+    appearance: none;
+  
+    border-radius: 50%;
+    width: 14pt;
+    height: 14pt;
+  
+    border: 2px solid #00aaff;
+    transition: 0.25s all linear;
+    margin-right: 5px;
+  
+    position: relative;
+    top: 4px;
+  }
+  
+  input:checked{
+    border: 6px solid #00aaff;
+  }
+  
+  label{
+    margin-left:10px;
+  }
+  
+  .explanation{
+    display:none;
+    background-color:lightgrey;
+    padding:20px;
+    border-bottom-left-radius:8px;
+    border-bottom-right-radius:8px;
+  }
